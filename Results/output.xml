@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on darwin)" generated="20220923 01:00:07.786" rpa="false" schemaversion="3">
+<suite id="s1" name="DemoRegistration" source="/Users/yashagarwal/Desktop/Demo-App-Automation/Tests/DemoRegistration.robot">
+<test id="s1-t1" name="Verify registering the user to the demo app" line="11">
+<kw name="Open browser with url" library="CommonFunctionality" type="SETUP">
+<doc>Open browser with given url and maximize window</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220923 01:00:08.087" level="INFO">Opening browser 'chrome' to base url 'http://192.168.10.136:8080/'.</msg>
+<status status="PASS" starttime="20220923 01:00:08.087" endtime="20220923 01:00:10.355"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220923 01:00:10.356" endtime="20220923 01:00:10.489"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Demo app</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20220923 01:00:10.509" level="INFO">Current page contains text 'Demo app'.</msg>
+<status status="PASS" starttime="20220923 01:00:10.489" endtime="20220923 01:00:10.509"/>
+</kw>
+<status status="PASS" starttime="20220923 01:00:08.086" endtime="20220923 01:00:10.510"/>
+</kw>
+<kw name="Open Registration Page" library="HomePage">
+<doc>Open Registration Page from homepage</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${register_link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220923 01:00:10.511" level="INFO">Clicking element 'link=Register'.</msg>
+<status status="PASS" starttime="20220923 01:00:10.510" endtime="20220923 01:00:10.643"/>
+</kw>
+<kw name="Wait Until Location Contains" library="SeleniumLibrary">
+<arg>register</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" starttime="20220923 01:00:10.643" endtime="20220923 01:00:10.656"/>
+</kw>
+<status status="PASS" starttime="20220923 01:00:10.510" endtime="20220923 01:00:10.656"/>
+</kw>
+<kw name="Register User" library="RegistrationPage">
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<arg>${FIRSTNAME}</arg>
+<arg>${LASTNAME}</arg>
+<arg>${PHONE}</arg>
+<doc>Registers the user with given details</doc>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username_textbox}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220923 01:00:10.658" level="INFO">Typing text 'TestUser1234567' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20220923 01:00:10.658" endtime="20220923 01:00:10.843"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password_textbox}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220923 01:00:10.844" level="INFO">Typing text 'Password' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20220923 01:00:10.843" endtime="20220923 01:00:10.937"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${firstname_textbox}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220923 01:00:10.938" level="INFO">Typing text 'Ashrika' into text field 'id=firstname'.</msg>
+<status status="PASS" starttime="20220923 01:00:10.938" endtime="20220923 01:00:11.022"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${lastname_textbox}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220923 01:00:11.023" level="INFO">Typing text 'Agarwal' into text field 'id=lastname'.</msg>
+<status status="PASS" starttime="20220923 01:00:11.022" endtime="20220923 01:00:11.101"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${phone_textbox}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220923 01:00:11.102" level="INFO">Typing text '1234567890' into text field 'id=phone'.</msg>
+<status status="PASS" starttime="20220923 01:00:11.101" endtime="20220923 01:00:11.179"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${register_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220923 01:00:11.179" level="INFO">Clicking element 'xpath=//input[@value="Register"]'.</msg>
+<status status="PASS" starttime="20220923 01:00:11.179" endtime="20220923 01:00:11.427"/>
+</kw>
+<kw name="Wait Until Location Contains" library="SeleniumLibrary">
+<arg>login</arg>
+<doc>Waits until the current URL contains ``expected``.</doc>
+<status status="PASS" starttime="20220923 01:00:11.427" endtime="20220923 01:00:11.432"/>
+</kw>
+<status status="PASS" starttime="20220923 01:00:10.656" endtime="20220923 01:00:11.432"/>
+</kw>
+<kw name="Close Window" library="CommonFunctionality" type="TEARDOWN">
+<doc>Close the window/browser</doc>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220923 01:00:11.433" endtime="20220923 01:00:11.517"/>
+</kw>
+<status status="PASS" starttime="20220923 01:00:11.432" endtime="20220923 01:00:11.518"/>
+</kw>
+<doc>Registration Test</doc>
+<tag>Functional</tag>
+<tag>Regression</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20220923 01:00:08.085" endtime="20220923 01:00:11.519"/>
+</test>
+<doc>Registration Functionality</doc>
+<status status="PASS" starttime="20220923 01:00:07.790" endtime="20220923 01:00:11.522"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Functional</stat>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="DemoRegistration">DemoRegistration</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
